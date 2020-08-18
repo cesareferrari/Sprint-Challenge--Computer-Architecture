@@ -122,10 +122,12 @@ class CPU:
         self.reg[7] += 1
 
 
+    # Jump to the given register
     def jmp(self, operand_a, _):
         self.pc = self.reg[operand_a]
 
 
+    # If equal flag is set (true), jump to the address stored in the given register.
     def jeq(self, operand_a, _):
         if self.equal == True:
             self.pc = self.reg[operand_a]
@@ -133,6 +135,7 @@ class CPU:
             self.pc += 2
 
 
+    # If equal flag is false jump to the address stored in the given register.
     def jne(self, operand_a, _):
         if self.equal == False:
             self.pc = self.reg[operand_a]
