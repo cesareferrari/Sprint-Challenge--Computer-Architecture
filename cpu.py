@@ -1,7 +1,6 @@
-"""CPU functionality."""
-
 import sys
 
+"""CPU functionality."""
 HLT  = 0b00000001
 LDI  = 0b10000010
 PRN  = 0b01000111
@@ -19,13 +18,9 @@ JNE  = 0b01010110
 
 class CPU:
     """Main CPU class."""
-
     def __init__(self):
         """Construct a new CPU."""
-
-
         self.ram = [None] * 256
-
         self.reg = [None] * 8
 
         # stack pointer
@@ -244,7 +239,5 @@ class CPU:
 
             if is_alu_command:
                 self.alu(ir, operand_a, operand_b)
-
             else:
                 self.branchtable[ir](operand_a, operand_b)
-
